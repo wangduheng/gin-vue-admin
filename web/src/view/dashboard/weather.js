@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 const weatherInfo = ref('今日晴，0℃ - 10℃，天气寒冷，注意添加衣物。')
 const amapKey = '7abb7b1ca95af3121761ca62e2c02031	'
-const baiduKey=""
+
 export const useWeatherInfo = () => {
   ip()
   return weatherInfo
@@ -15,11 +15,10 @@ export const ip = async() => {
   if (baiduKey === '') {
     return false
   }
-  getWeatherByBaidu(222405)
-  // const res = await axios.get('https://restapi.amap.com/v3/ip?key=' + amapKey)
-  // if (res.data.adcode) {
-  //   getWeatherByBaidu(res.data.adcode)
-  // }
+  const res = await axios.get('https://restapi.amap.com/v3/ip?key=' + amapKey)
+  if (res.data.adcode) {
+    getWeather(res.data.adcode)
+  }
 }
 
 const getWeather = async(code) => {
