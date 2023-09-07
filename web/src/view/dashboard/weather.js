@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 
 const weatherInfo = ref('今日晴，0℃ - 10℃，天气寒冷，注意添加衣物。')
-const amapKey = '7abb7b1ca95af3121761ca62e2c02031	'
+const amapKey = '3086b8702b33247c6cf736d821046618	'
 
 export const useWeatherInfo = () => {
   ip()
