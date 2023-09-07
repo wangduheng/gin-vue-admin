@@ -30,11 +30,4 @@ const getWeather = async(code) => {
   }
 }
 
-const getWeatherDefault = async()=>{
-  const response = await axios.get('https://www.sojson.com/blog/305.html' + baiduKey + '&data_type=now&ak=' + code)
-  if (response.data.status === '1') {
-    const s = response.data.lives[0]
-    weatherInfo.value = s.city + ' 天气：' + s.weather + ' 温度：' + s.temperature + '摄氏度 风向：' + s.winddirection + ' 风力：' + s.windpower + '级 空气湿度：' + s.humidity
-  }
-}
 
