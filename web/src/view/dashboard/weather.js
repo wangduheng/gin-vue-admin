@@ -12,7 +12,7 @@ export const useWeatherInfo = () => {
 
 export const ip = async() => {
   // key换成你自己的 https://console.amap.com/dev/index
-  if (baiduKey === '') {
+  if (amapKey === '') {
     return false
   }
   const res = await axios.get('https://restapi.amap.com/v3/ip?key=' + amapKey)
