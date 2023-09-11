@@ -1,4 +1,5 @@
 <template>
+  <h1>使用chatGpt</h1>
   <div class="gva-table-box">
     <warning-bar title="使用GPT-3.5模型，存在一定不稳定性，成功率为50%左右，使用GPT-4可以极大提升成功率，但是费用较高。" />
     <div v-if="!chatToken">
