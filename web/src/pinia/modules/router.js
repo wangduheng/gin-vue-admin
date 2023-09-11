@@ -89,6 +89,7 @@ export const useRouterStore = defineStore('router', () => {
     asyncRouterHandle(baseRouter)
     KeepAliveFilter(asyncRouter)
     asyncRouters.value = baseRouter
+    console.log('baseRouter:',baseRouter)
     return true
   }
 
