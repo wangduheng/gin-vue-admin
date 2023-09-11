@@ -62,8 +62,8 @@ export const useUserStore = defineStore('user', () => {
         const routerStore = useRouterStore()
         await routerStore.SetAsyncRouter()
         const asyncRouters = routerStore.asyncRouters
-        console.log("asyncRouters: ",asyncRouters)
         asyncRouters.forEach(asyncRouter => {
+          console.log("asyncRouter: ",asyncRouter)
           router.addRoute(asyncRouter)
         })
         if (!router.hasRoute(userInfo.value.authority.defaultRouter)) {
