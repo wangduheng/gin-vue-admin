@@ -71,6 +71,8 @@ export const useRouterStore = defineStore('router', () => {
     }]
     const asyncRouterRes = await asyncMenu()
     const asyncRouter = asyncRouterRes.data.menus
+    console.log('asyncRouter:',asyncRouter)
+
     asyncRouter && asyncRouter.push({
       path: 'reload',
       name: 'Reload',
@@ -81,6 +83,7 @@ export const useRouterStore = defineStore('router', () => {
       },
       component: 'view/error/reload.vue'
     })
+    console.log('baseRouter:',baseRouter)
     formatRouter(asyncRouter, routeMap)
     baseRouter[0].children = asyncRouter
     if (notLayoutRouterArr.length !== 0) {
