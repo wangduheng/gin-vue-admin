@@ -62,10 +62,10 @@ export const useUserStore = defineStore('user', () => {
         const routerStore = useRouterStore()
         await routerStore.SetAsyncRouter()
         const asyncRouters = routerStore.asyncRouters
+        console.log("asyncRouters: ",asyncRouters)
         asyncRouters.forEach(asyncRouter => {
           router.addRoute(asyncRouter)
         })
-        console.log("router: ",router)
         if (!router.hasRoute(userInfo.value.authority.defaultRouter)) {
           ElMessage.error("请联系管理员进行授权")
         } else {
